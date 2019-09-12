@@ -1,24 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./app.scss";
+// http://taskmaster-dev.us-east-1.elasticbeanstalk.com/api/v1
+// http://taskmaster-env.3nz9fretef.us-west-2.elasticbeanstalk.com/
+
+const API = "http://taskmaster-dev.us-east-1.elasticbeanstalk.com/api/v1/tasks";
 
 function App() {
+  fetch(API)
+    .then(data => data.json())
+    .then(fetchTasks => setTasks(fetchTasks));
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(_getTasks, []);
+
+  function _getTasks() {
+    console.log("getting tasks");
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul>
+        {tasks.map((task, idx) => {
+          return (
+            <li key={task.id}>
+              <details>
+                <summary>
+                  <span>{task.title}</span>
+                </summary>
+                <ol>
+                  {task.history.map((record, idx) => {
+                    return (
+                      <li key={idx}>
+                        <span>{record.timestamp}</span>
+                        <span>{record.action}</span>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </details>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
