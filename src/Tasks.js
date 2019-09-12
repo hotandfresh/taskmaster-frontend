@@ -1,5 +1,4 @@
 import React, { useState, useEffect, Component, Fragment } from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
 
 const API = "http://taskmaster-dev.us-east-1.elasticbeanstalk.com/api/v1/tasks";
 function Tasks() {

@@ -1,5 +1,4 @@
-import React, { useState, useEffect, Component, Fragment } from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
+import React, { Component, Fragment } from "react";
 import "./app.scss";
 import Tasks from "./Tasks";
 import Nav from "./Nav";

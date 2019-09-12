@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { Link } from "react-router-dom";
 
 class Nav extends Component {
   render() {
@@ -7,16 +6,8 @@ class Nav extends Component {
       <Fragment>
         <nav>
           <ul>
-            <Link to="/">
-              <li>Home</li>
-            </Link>
-
-            <Link to="/News">
-              <li>News</li>
-            </Link>
-            <Link to="/About">
-              <li>About</li>
-            </Link>
+            <li>Home</li>
+            <li>Tasks</li>
           </ul>
         </nav>
       </Fragment>
