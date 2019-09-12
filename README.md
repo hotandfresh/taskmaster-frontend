@@ -6,7 +6,7 @@ This is the ultra simple react frontend for the Taskmaster application. Taskmast
 
 ## Features
 
-This react application consists of two fragments. One fragment is
+This react application consists of two fragments. One fragment is the nav and the other fragment is Tasks. The Task fragment is where most of the work is happening.  Inside Task is the api call to the backend and there is functionality to display those tasks.
 
 ## Screenshot
 
