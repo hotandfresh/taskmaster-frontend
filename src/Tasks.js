@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Component, Fragment } from "react";
 
-const API = "http://taskmaster-dev.us-east-1.elasticbeanstalk.com/api/v1/tasks";
+const API =
+  "http://taskmaster.6jwvzatvsi.us-west-2.elasticbeanstalk.com/api/v1/tasks";
 function Tasks() {
   useEffect(() => {
     fetchTasks();

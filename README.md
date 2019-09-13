@@ -6,7 +6,7 @@ This is the ultra simple react frontend for the Taskmaster application. Taskmast
 
 ## Features
 
-This react application consists of two fragments. One fragment is the nav and the other fragment is Tasks. The Task fragment is where most of the work is happening.  Inside Task is the api call to the backend and there is functionality to display those tasks.
+This react application consists of two fragments. One fragment is the nav and the other fragment is Tasks. The Task fragment is where most of the work is happening. Inside Task is the api call to the backend and there is functionality to display those tasks.
 
 ## Screenshot
 
@@ -18,4 +18,4 @@ This application is currently hosted on the Amazon S3 service. The site is [here
 
 ## Backend Repo
 
-This [taskmaster repo](https://github.com/trevorjdobson/taskmaster) was used.
+This [taskmaster repo](https://github.com/hotandfresh/taskmaster) was used.
