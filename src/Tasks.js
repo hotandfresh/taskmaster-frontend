@@ -41,7 +41,7 @@ function Tasks() {
               <li key={task.id}>
                 <details>
                   <summary>
-                    <span>{task.title}</span>
+                    <span>Task Name: {task.title}</span>
                   </summary>
                   <ol>
                     {task.pic ? (
@@ -64,7 +64,9 @@ function Tasks() {
                         </button>
                       </form>
                     )}
-
+                    <li>Description: {task.description}</li>
+                    <li>Assignee: {task.assignee}</li>
+                    <li>History: </li>
                     {task.history.map((record, idx) => {
                       return (
                         <li key={idx}>
