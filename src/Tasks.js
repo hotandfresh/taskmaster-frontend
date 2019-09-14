@@ -44,18 +44,27 @@ function Tasks() {
                     <span>{task.title}</span>
                   </summary>
                   <ol>
-                    <form
-                      onSubmit={_upload}
-                      action={API + task.id + "/images"}
-                      method="POST"
-                      encType="multipart/form-data"
-                    >
-                      <span>Upload Pic</span>
-                      <input onChange={_handleChange} name="file" type="file" />
-                      <button name="id" value={task.id}>
-                        Submit
-                      </button>
-                    </form>
+                    {task.pic ? (
+                      <img src={task.pic} alt={task.title}></img>
+                    ) : (
+                      <form
+                        onSubmit={_upload}
+                        action={API + task.id + "/images"}
+                        method="POST"
+                        encType="multipart/form-data"
+                      >
+                        <span>Upload Pic</span>
+                        <input
+                          onChange={_handleChange}
+                          name="file"
+                          type="file"
+                        />
+                        <button name="id" value={task.id}>
+                          Submit
+                        </button>
+                      </form>
+                    )}
+
                     {task.history.map((record, idx) => {
                       return (
                         <li key={idx}>
