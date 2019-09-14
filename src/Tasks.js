@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 let form = new FormData();
 const API =
-  // "http://taskmaster.6jwvzatvsi.us-west-2.elasticbeanstalk.com/api/v1/tasks";
+  // "http://taskmaster.6jwvzatvsi.us-west-2.elasticbeanstalk.com/api/v1/tasks/";
   "http://localhost:5000/api/v1/tasks/";
 function Tasks() {
   useEffect(() => {
