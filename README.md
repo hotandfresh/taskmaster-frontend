@@ -12,7 +12,7 @@ To add task and have it show, navigate to the [backend](https://github.com/hotan
 
 ## Screenshot
 
-![home page](tasks.png)
+![home page](task.png)
 
 ## Deployed Link
 
