@@ -71,6 +71,7 @@ function Tasks() {
                       return (
                         <li key={idx}>
                           <span>{record.timestamp}</span>
+                          <span> : </span>
                           <span>{record.action}</span>
                         </li>
                       );
