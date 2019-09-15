@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is the ultra simple react frontend for the Taskmaster application. Taskmaster is an api that consists of tasks such as the title of what it is, what date it was created and assigned, and it shows the progress of the task.
+This is the ultra simple react frontend for the [Taskmaster](https://github.com/hotandfresh/taskmaster) application. Taskmaster is an api that consists of tasks. This front end displays the title, description, assignee, image and history of a task.
 
 ## Features
 
