@@ -10,6 +10,8 @@ This react application consists of two fragments. One fragment is the nav and th
 
 To add task and have it show, navigate to the [backend](https://github.com/hotandfresh/taskmaster) for directions.
 
+Pictures uploaded are now resized using a lambda function.  That code is [here](https://github.com/hotandfresh/thumbnail).
+
 ## Screenshot
 
 ![home page](task.png)
