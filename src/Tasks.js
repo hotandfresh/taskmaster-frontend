@@ -2,6 +2,8 @@ import React, { useState, useEffect, Fragment } from "react";
 let form = new FormData();
 const API =
   "http://taskmaster.6jwvzatvsi.us-west-2.elasticbeanstalk.com/api/v1/tasks/";
+
+const APIWithResizedImg = "https://alltasksresized.s3-us-west-2.amazonaws.com/";
 function Tasks() {
   useEffect(() => {
     fetchTasks();
@@ -44,7 +46,17 @@ function Tasks() {
                   </summary>
                   <ol>
                     {task.pic ? (
-                      <img src={task.pic} alt={task.title}></img>
+                      <img
+                        src={
+                          (APIWithResizedImg + "resized-" + task.pic).slice(
+                            0,
+                            58
+                          ) +
+                          "-" +
+                          (APIWithResizedImg + "resized-" + task.pic).slice(110)
+                        }
+                        alt={task.title}
+                      ></img>
                     ) : (
                       <form
                         onSubmit={_upload}
