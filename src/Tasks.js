@@ -10,7 +10,6 @@ function Tasks() {
     fetchTasks();
   }, []);
   const [item, setItem] = useState([]);
-  const [formData, setFormData] = useState({});
 
   const fetchTasks = async () => {
     const data = await fetch(API);
@@ -22,22 +21,6 @@ function Tasks() {
   function _handleChangeForUpload(event) {
     let value = event.target.files ? event.target.files[0] : event.target.value;
     form.set(event.target.name, value);
-  }
-
-  function _handleChange(event) {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
-  }
-  function _handleSubmit(event) {
-    event.preventDefault();
-    fetch(API, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      mode: "cors",
-      body: JSON.stringify(formData)
-    })
-      .then(response => response.json())
-      .catch(error => console.error("Error:", error))
-      .then(response => console.log("Success:", response.body));
   }
 
   function _upload(event) {
@@ -54,40 +37,6 @@ function Tasks() {
   return (
     <Fragment>
       <div className="App">
-        <h2>Add a Task</h2>
-        <form onSubmit={_handleSubmit}>
-          <label>
-            <span>Title</span>
-            <input
-              onChange={_handleChange}
-              name="title"
-              type="text"
-              placeholder="title"
-              required
-            />
-          </label>
-          <label>
-            <span>Description</span>
-            <input
-              onChange={_handleChange}
-              name="description"
-              type="text"
-              placeholder="description"
-              required
-            />
-          </label>
-          <label>
-            <span>Assignee</span>
-            <input
-              onChange={_handleChange}
-              name="assignee"
-              type="text"
-              placeholder="assignee"
-            />
-          </label>
-          <button>Save</button>
-        </form>
-
         <ul>
           {item.map((task, idx) => {
             return (
