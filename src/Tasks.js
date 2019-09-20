@@ -1,7 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
 let form = new FormData();
 const API =
-  "http://taskmaster.6jwvzatvsi.us-west-2.elasticbeanstalk.com/api/v1/tasks/";
+  // "http://taskmaster.6jwvzatvsi.us-west-2.elasticbeanstalk.com/api/v1/tasks/";
+  "https://trjrww9576.execute-api.us-west-2.amazonaws.com/prod/tasks/";
 
 const APIWithResizedImg = "https://alltasksresized.s3-us-west-2.amazonaws.com/";
 function Tasks() {
@@ -17,7 +18,7 @@ function Tasks() {
     setItem(items);
   };
 
-  function _handleChange(event) {
+  function _handleChangeForUpload(event) {
     let value = event.target.files ? event.target.files[0] : event.target.value;
     form.set(event.target.name, value);
   }
@@ -66,7 +67,7 @@ function Tasks() {
                       >
                         <span>Upload Pic</span>
                         <input
-                          onChange={_handleChange}
+                          onChange={_handleChangeForUpload}
                           name="file"
                           type="file"
                         />
